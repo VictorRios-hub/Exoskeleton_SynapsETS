@@ -43,4 +43,5 @@ The servo used in the project are the LD-260MD Digital Servo. You can find the z
 # The prototype for ACE competition in Michigan State University
 
 ![IMG_0915](https://github.com/VictorRios-hub/Exoskeleton_SynapsETS/assets/99796369/8622771e-c5c6-4af5-8cd3-5cf3873482b9)
+![Afficher les photos récentes](https://github.com/VictorRios-hub/Exoskeleton_SynapsETS/assets/99796369/aef0ac55-05d0-448d-9ced-0921d116da57)
 
