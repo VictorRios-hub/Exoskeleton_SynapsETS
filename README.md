@@ -39,3 +39,8 @@ Go in the repo main, select the target (EPS32-S2), select your port COM, build, 
 ## Servo motor information 
 
 The servo used in the project are the LD-260MD Digital Servo. You can find the zip file with the information of the servo at the following link [Hiwonder Google Drive](https://drive.google.com/drive/folders/1Bgf1HGrfhB8N8XIxlRpz-U9_2oxVurDv) et sur le sharepoint de SynapsÉTS avec le lien suivant [Lien sharepoint vers le dossier](https://etsmtl365.sharepoint.com/:u:/r/sites/msteams_77c024/Documents%20partages/Project%20Exo/2022-2023/Documentation/Datasheets/LD-260MG%20Digital%20Servo.7z?csf=1&web=1&e=BtieLK).
+
+# The prototype for ACE competition in Michigan State University
+
+![IMG_0915](https://github.com/VictorRios-hub/Exoskeleton_SynapsETS/assets/99796369/8622771e-c5c6-4af5-8cd3-5cf3873482b9)
+
