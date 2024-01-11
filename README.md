@@ -1,56 +1,41 @@
-# Pthread Example
+# EXO workspace
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+Développement du software sur EPS32 pour l'exosquelette de puissance HERMESETS en vue de la compétition ACE. 
 
-ESP-IDF provides implementations for many standard POSIX Threads (pthread) APIs. These APIs are impmlemented as thin wrappers around FreeRTOS APIs.
+## Installation
 
-This example demonstrates how to create threads using this API, and how to use the ESP-IDF pthreads extension API to set default thread parameters for the related FreeRTOS tasks. For complete details about supported Pthreads APIs, consult the ESP-IDF Programmers Guide.
+L'environnement de développement est Visual Studio Code sous Windows 10.
 
-## How to use example
+- Setup de l'IDE
 
-### Hardware Required
+Quick tutorial pour l'installation de ESP-IDF pour ESP32 sous VS code : [Getting started ESP-IDF VScode](https://www.youtube.com/watch?v=Lc6ausiKvQM&feature=youtu.be&ab_channel=EspressifSystems)
 
-This example should be able to run on any supported Espressif SoC development board.
+- Clone du repo git
 
-### Configure the project
+`git clone https://github.com/ClubSynapsETSOrganisationnalGithub/Exo.git/Exo`
 
-```
-idf.py set-target esp32
-```
+Go in the repo main, select the target (EPS32-S2), select your port COM, build, flash and monitor the results.
 
-(Replace `esp32` with the name of the chip target you are using.)
+## Features 
 
-```
-idf.py menuconfig
-```
+- IMU : Récupération des 3 axes de l'accéléromètre et des 3 axes du gyroscope. Library homemade issu de [Grove_IMU_10DOF_v2.0](https://github.com/Seeed-Studio/Grove_IMU_10DOF_v2.0)
+- Thread implémentation : l'accès aux senseurs IMU se fait par un thread en parallèle qui roule indépendamment de la fonction main. 
+- ESC : Electronic speed controller from flipsky [Mini FSESC4.20 50A base on VESC](https://flipsky.net/collections/electronic-products/products/mini-fsesc4-20-50a-base-on-vesc-widely-used-in-eskateboard-escooter-ebike) and watch demo for more information [DIY ebike using flipsky tech](https://www.youtube.com/watch?v=3ov6Q745u9g).
 
-### Build and Flash
+## How to build the project in your VS Code
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+1. All custom code that is used in the project must be put in the inc/ and src/ folder in the top folder C:\SynapseDev\EXO, then inside your project you fetch the code using :
+**../inc/file_name.h**.
 
-```
-idf.py -p PORT flash monitor
-```
+2. Using ESP-IDF call the command : **ESP-IDF: New Project** and use the following criteria : 
+    - Name the projet **EXO_application**
+    - Choose the repository : **C:\SynapseDev\EXO** as the projet reposity
+    - For the component library use the path : **C:\Users\username\esp\esp-idf\components**
 
-(Replace PORT with the name of the serial port to use.)
+3. Une fois le projet créé, VS Code vous demandera si vous vouler ouvrir une nouvelle fenêtre pour le projet crée, vous devez dire oui.
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+4. Une fois que vous avez ouvert une nouvelle fenêtre, vous pouvez compiler le projet en suivant les instructions de Expressif [VS Code extension](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/basic_use.md). 
 
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
+## Servo motor information 
 
-## Example Output
-
-```
-Created thread 0x3ffaff74
-Created larger stack thread 0x3ffb7ca8
-This thread has ID 0x3ffb7ca8 and 15896 bytes free stack
-This thread has ID 0x3ffaff74 and 2616 bytes free stack
-Thread 0x3ffaff74 exiting
-Thread 0x3ffb7ca8 exiting
-Threads have exited
-
-Created thread 0x3ffb44c8 with new default config
-This thread has ID 0x3ffb44c8 and 32312 bytes free stack
-Thread 0x3ffb44c8 exiting
-Thread has exited
-```
+The servo used in the project are the LD-260MD Digital Servo. You can find the zip file with the information of the servo at the following link [Hiwonder Google Drive](https://drive.google.com/drive/folders/1Bgf1HGrfhB8N8XIxlRpz-U9_2oxVurDv) et sur le sharepoint de SynapsÉTS avec le lien suivant [Lien sharepoint vers le dossier](https://etsmtl365.sharepoint.com/:u:/r/sites/msteams_77c024/Documents%20partages/Project%20Exo/2022-2023/Documentation/Datasheets/LD-260MG%20Digital%20Servo.7z?csf=1&web=1&e=BtieLK).
